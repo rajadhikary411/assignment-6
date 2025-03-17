@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English-Janala</title>
     
-    <!-- ✅ TailwindCSS -->
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- ✅ DaisyUI CDN -->
+    <!-- DaisyUI CDN -->
     <script>
         tailwind.config = {
             theme: {
@@ -19,10 +19,13 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  
 
 </head>
 <body>
-   <header class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+   <header class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md"id="header">
     <nav class="flex justify-between p-6 items-center border-b-2">
         <div class="flex justify-between items-center gap-2 font-bold">
             <h1>English</h1>
@@ -30,53 +33,68 @@
             <h1>জানালা</h1>
         </div>
         <div class="flex justify-between items-center font-bold gap-4">
-            <button class="btn btn-outline btn-primary normal-case">FAQ</button>
-            <button class="btn btn-outline btn-primary normal-case">Learn</button>
-            <button class="btn btn-outline btn-primary normal-case">Logout</button>
+            <button id="faq-btn" class="btn btn-outline btn-primary normal-case group">
+                <img class="transition duration-300 filter group-hover:invert" src="./assets/fa-circle-question.png" alt="">
+                FAQ
+            </button>
+            
+            <button class="btn btn-outline btn-primary normal-case group" id="learn-btn">
+                <img class="transition duration-300 filter group-hover:invert" src="./assets/fa-book-open.png" alt="">
+                Learn
+            </button>
+            
+            <button class="btn btn-outline btn-primary normal-case group">
+                <img class="transition duration-300 filter group-hover:invert" src="./assets/fa-arrow-right-from-bracket.png" alt="">
+                Logout
+            </button>
+            
         </div>
     </nav>
    </header>
-   <main class="w-11/12  mx-auto mt-[200px]">
+   <main class="w-11/12  mx-auto mt-[200px]"id="main-content">
     <!-- banner section -->
-     <section class="flex justify-between items-center">
-        <div class="">
-            <h1 class="font-bold text-2xl mb-4"><span class="text-sky-600 ">English</span> is Easy!!</h1>
+    <section class="flex justify-between items-center">
+        <div>
+            <h1 class="font-bold text-3xl mb-4"><span class="text-sky-600">English</span> is Easy!!</h1>
             <p class="w-7/12">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
             <div class="mt-4">
-                <input type="text" placeholder="Enter Your Name" class="border py-2 px-4 rounded "><br><br>
-                <input type="password" class="border py-2 px-4 rounded" placeholder="Enter your password" />
+                <!-- Add id for name and password inputs -->
+                <input type="text" id="name-input" placeholder="Enter Your Name" class="border py-2 px-4 rounded"><br><br>
+                <input type="password" id="password-input" class="border py-2 px-4 rounded" placeholder="Enter your password" />
                 <div class="mt-4">
-                    <button class="btn btn-primary normal-case text-white ">Get started</button>
+                    <!-- Add id for the Get Started button -->
+                    <button id="get-started-btn" class="btn btn-primary normal-case text-white">Get started</button>
                 </div>
             </div>
         </div>
         <div>
             <img src="./assets/hero-student.png" alt="">
         </div>
-      
+    </section>
+    
      </section>
      <!-- vocabulary -->
-      <section class="mt-28">
+      <section class="pt-28"id="learn-section" id="lession">
         <h1 class="font-bold text-3xl text-center"><span class="text-sky-500">Let's</span> Learn Vocabularies</h1>
         <!-- dynamic button add korte hobe -->
-        <div id="dynamic-button "class="flex justify-center items-center mt-8">
-            <button class="btn btn-outline btn-primary mr-3">Primary</button>
-            <button class="btn btn-outline btn-primary">Primary</button>
-            <button class="btn btn-outline btn-primary">Primary</button>
-            <button class="btn btn-outline btn-primary">Primary</button>
-            <button class="btn btn-outline btn-primary">Primary</button>
-            <button class="btn btn-outline btn-primary">Primary</button>
-            <button class="btn btn-outline btn-primary">Primary</button>
+        <div id="dynamic-button"class="flex justify-center items-center mt-16">
 
+        <!-- ekhane dynamic button add hobe
+          -->
+          <div id="dynamic-content" class="mt-6 flex flex-col items-center"></div>
         </div>
+        <div id="word-list" class="grid grid-cols-3 gap-3  justify-center p-5"></div>
+        <div id="no-data-message" class="hidden"></div>
+
+
         <!-- akti button selet korun -->
-         <div class="mt-8 bg-gray-50 p-16 rounded-lg overflow-hidden">
+         <div class="mt-16 bg-gray-50 p-16 rounded-lg overflow-hidden"id="select-lekha-div">
             <p class="text-center text-[12px] text-gray-500 mb-4">আপনি এখনো কোন Lesson Select করেন ন</p>
             <h1 class="text-center text-3xl ">একটি Lesson Select করুন।</h1>
          </div>
       </section>
       <!-- faq section -->
-       <section class="mt-32">
+       <section class=" pt-32 "id="faq-section" id="faq">
         <h1 class="text-center text-3xl font-bold"><span class="text-sky-500">Frequently</span> Asked Questions</h1>
         <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-16 bg-gray-50">
             <input type="radio" name="my-accordion-3" checked="checked" />
@@ -109,7 +127,7 @@
 
 
        <!-- foooter-->
-        <footer class="flex justify-between items-center mt-36 pb-8 border-t-2 pt-16">
+        <footer class="flex justify-between items-center mt-36 pb-8 border-t-2 pt-16"id="footer">
             <div>
                 <div class="flex justify-start items-center font-bold">
                     <h1>English</h1>
@@ -132,5 +150,6 @@
             </div>
         </footer>
    </main>
+   <script src="index.js"></script>
 </body>
 </html>
