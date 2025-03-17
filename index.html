@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English-Janala</title>
+    
+    <!-- ✅ TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ✅ DaisyUI CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+            plugins: [window.daisyui],
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+   <header class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+    <nav class="flex justify-between p-6 items-center border-b-2">
+        <div class="flex justify-between items-center gap-2 font-bold">
+            <h1>English</h1>
+            <img src="./assets/logo.png" alt="">
+            <h1>জানালা</h1>
+        </div>
+        <div class="flex justify-between items-center font-bold gap-4">
+            <button class="btn btn-outline btn-primary normal-case">FAQ</button>
+            <button class="btn btn-outline btn-primary normal-case">Learn</button>
+            <button class="btn btn-outline btn-primary normal-case">Logout</button>
+        </div>
+    </nav>
+   </header>
+   <main class="w-11/12  mx-auto mt-[200px]">
+    <!-- banner section -->
+     <section class="flex justify-between items-start">
+        <div class="pt-16">
+            <h1 class="font-bold text-2xl mb-4"><span class="text-sky-600 ">English</span> is Easy!!</h1>
+            <p class="w-7/12">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+            <div class="mt-4">
+                <input type="text" placeholder="Enter Your Name" class="border p-2 rounded"><br><br>
+                <input type="password" class="border p-2 rounded" placeholder="Enter your password" />
+
+            </div>
+        </div>
+        <div>
+            <img src="./assets/hero-student.png" alt="">
+        </div>
+      
+     </section>
+   </main>
+</body>
+</html>

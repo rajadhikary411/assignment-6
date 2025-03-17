@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English-Janala</title>
+    
+    <!-- ✅ TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ✅ DaisyUI CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+            plugins: [window.daisyui],
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" />
+
+    <style>
+        /* Navbar Transparent Effect */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.1); /* Light transparent */
+            backdrop-filter: blur(10px); /* Blur effect */
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- ✅ Background Image -->
+    <div class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?nature,water')] bg-cover bg-center -z-10"></div>
+
+    <!-- ✅ Fixed Transparent Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="navbar flex justify-between p-6 items-center">
+            <div class="flex justify-between items-center gap-2 font-bold">
+                <h1>English</h1>
+                <img src="./assets/logo.png" alt="">
+                <h1>জানালা</h1>
+            </div>
+            <div class="flex justify-between items-center font-bold gap-4">
+                <button class="btn btn-outline normal-case">FAQ</button>
+                <button class="btn btn-outline normal-case">Learn</button>
+                <button class="btn btn-outline normal-case">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ✅ Page Content -->
+    <main class="h-[200vh] flex justify-center items-center text-white text-2xl">
+        Scroll to see the effect!
+    </main>
+</body>
+</html>
